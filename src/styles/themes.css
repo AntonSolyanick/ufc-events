@@ -1,0 +1,16 @@
+:root {
+  --bg-color: rgb(255, 255, 255);
+  --secondary-bg-color: rgb(205, 189, 189);
+  --primary-color: rgb(25, 25, 25);
+  --secondary-color: rgb(210, 10, 10);
+
+  --card-bg: #d5d5d7;
+
+  --listbox-bg: #d5d5d7;
+}
+
+.dark {
+  --bg-color: rgb(0, 0, 0);
+  --secondary-bg-color: rgb(47, 34, 34);
+  --primary-color: rgb(255, 255, 255);
+}
