@@ -1,3 +1,5 @@
+import { FightersList } from "@/features/FightersList";
+
 type NextFightInfo = {
   firstFighterName: string;
   secondFighterName: string;
@@ -33,9 +35,7 @@ export default async function ChooseFighter() {
 
   return (
     <section>
-      <div>
-        {fighters.body.data.map((fighter: FighterDocument) => fighter.name)}
-      </div>
+      <FightersList fighters={fighters.body.data} />
       <input type="text" placeholder="введите имя бойца" />
     </section>
   );

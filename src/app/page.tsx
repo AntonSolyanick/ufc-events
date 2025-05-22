@@ -1,4 +1,4 @@
-import { ThemeSwitcher } from "@/features/theme/ui/ThemeSwitcher";
+import { ThemeSwitcher } from "@/features/ThemeSwitcher/ui/ThemeSwitcher";
 export default function Home() {
   return (
     <div>

@@ -1,0 +1,39 @@
+.FighterCard {
+  display: flex;
+  justify-content: space-around;
+  width: 700px;
+  position: relative;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding-bottom: 60px;
+  padding-left: 20px;
+}
+
+.fighterInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.nextFightInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--bg-color);
+  height: 140px;
+  width: 128px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.addButton {
+  position: absolute;
+  bottom: 10;
+  right: 20;
+}
