@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 
 import { Card } from "@/shared/ui/Card";
 import { Fighter } from "../../model/types/fighter";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text } from "@/shared/ui/Text.tsx";
+import { Text } from "@/shared/ui/Text";
 import cls from "./FighterCard.module.css";
 import { Button } from "@/shared/ui/Button";
+import { FighterImageSize } from "../../model/сonstants";
+import { useUser } from "@/features/Auth/model/hooks/useAuth";
 
 interface FighterCardProps {
   fighter: Fighter;
@@ -13,14 +17,20 @@ interface FighterCardProps {
 
 export const FighterCard = (props: FighterCardProps) => {
   const { fighter } = props;
+  const { data: user, isLoading } = useUser();
+
+  console.log("fighter", fighter);
+  console.log("favouritefighters", user?.favouriteFighters);
+  console.log(user?.favouriteFighters.includes(fighter));
 
   return (
     <Card className={classNames(cls.FighterCard)}>
       <Image
         src={fighter.fighterImage}
         alt="fighter image"
-        width={180}
-        height={274}
+        width={FighterImageSize.FIGHTER_IMAGE_WIDTH}
+        height={FighterImageSize.FIGHTER_IMAGE_HEIGHT}
+        priority
       ></Image>
       <div className={cls.textContainer}>
         <Text title={fighter.fighterRusName} />
@@ -40,8 +50,8 @@ export const FighterCard = (props: FighterCardProps) => {
           <Image
             src={fighter.nextFightInfo.firstFighterSmallImg}
             alt="fighter image"
-            width={256 / 2}
-            height={160 / 2}
+            width={FighterImageSize.PORTRAIT_FIGHTER_IMAGE_WIDTH}
+            height={FighterImageSize.PORTRAIT_FIGHTER_IMAGE_HEIGHT}
           ></Image>
           <Text text={fighter.nextFightInfo.firstFighterName} />
         </div>
@@ -50,8 +60,11 @@ export const FighterCard = (props: FighterCardProps) => {
           <Text text="Следующий бой не назначен" />
         </div>
       )}
-
-      <Button className={cls.addButton}> Добавить бойца в избранное</Button>
+      {user?.favouriteFighters.includes(fighter) ? (
+        <Button className={cls.addButton}> Удалить из избранного</Button>
+      ) : (
+        <Button className={cls.addButton}> Добавить бойца в избранное</Button>
+      )}
     </Card>
   );
 };
