@@ -1,4 +1,4 @@
-import { Button, ButtonTheme } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/Button";
 import { useForm } from "react-hook-form";
 import { SignUpFormData } from "../../model/types";
 import { useSignUp } from "../../model/hooks/useAuth";
@@ -18,11 +18,7 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
     });
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<SignUpFormData>();
+  const { register, handleSubmit } = useForm<SignUpFormData>();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -48,35 +44,6 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
           placeholder="Подтвердите пароль"
           type="password"
         />
-        {/* <input
-          {...register("email", { required: "Name is required" })}
-          type="text"
-          placeholder="Email"
-        />
-        {errors.email && <span>{errors.email.message}</span>}
-
-        <input
-          {...register("name", { required: "name is required" })}
-          type="name"
-          placeholder="Имя"
-        />
-        {errors.password && <span>{errors.password.message}</span>}
-
-        <input
-          {...register("password", { required: "Password is required" })}
-          type="password"
-          placeholder="Пароль"
-        />
-        {errors.password && <span>{errors.password.message}</span>}
-
-        <input
-          {...register("confirmPassword", {
-            required: "Consfirm password is required",
-          })}
-          type="password"
-          placeholder="Подтвердите пароль"
-        />
-        {errors.password && <span>{errors.password.message}</span>} */}
       </VStack>
       {signUpError && (
         <div className={cls.error}>

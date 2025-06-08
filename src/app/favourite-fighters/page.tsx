@@ -7,8 +7,6 @@ export default function FavouriteFighters() {
   const { data: user, isLoading } = useUser();
   if (isLoading) return <div>...Loading</div>;
 
-  //console.log("???????", user.favouriteFighters);
-
   return (
     <section>
       Favourite fighters

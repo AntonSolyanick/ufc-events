@@ -11,17 +11,29 @@ import { Button } from "@/shared/ui/Button";
 import { FighterImageSize } from "../../model/сonstants";
 import { useUser } from "@/features/Auth/model/hooks/useAuth";
 
+import { useFavouriteFighters } from "@/features/FightersList/model/hooks/useFavouriteFighter";
+
 interface FighterCardProps {
   fighter: Fighter;
 }
 
 export const FighterCard = (props: FighterCardProps) => {
   const { fighter } = props;
-  const { data: user, isLoading } = useUser();
+  const { data: user } = useUser();
+  const { addFavouriteFighter, removeFavouriteFighter } =
+    useFavouriteFighters();
 
-  console.log("fighter", fighter);
-  console.log("favouritefighters", user?.favouriteFighters);
-  console.log(user?.favouriteFighters.includes(fighter));
+  const isFavourite = user?.favouriteFighters?.some(
+    (favouriteFighter) => favouriteFighter._id === fighter._id
+  );
+
+  const handleFavouriteClick = () => {
+    if (isFavourite) {
+      removeFavouriteFighter.mutate(fighter._id);
+    } else {
+      addFavouriteFighter.mutate(fighter._id);
+    }
+  };
 
   return (
     <Card className={classNames(cls.FighterCard)}>
@@ -60,10 +72,15 @@ export const FighterCard = (props: FighterCardProps) => {
           <Text text="Следующий бой не назначен" />
         </div>
       )}
-      {user?.favouriteFighters.includes(fighter) ? (
-        <Button className={cls.addButton}> Удалить из избранного</Button>
-      ) : (
-        <Button className={cls.addButton}> Добавить бойца в избранное</Button>
+
+      {user && (
+        <Button
+          className={cls.addButton}
+          onClick={handleFavouriteClick}
+          // loading={addFavourite.isLoading || removeFavouriteFighter.isLoading}
+        >
+          {isFavourite ? "Удалить из избранного" : "Добавить в избранное"}
+        </Button>
       )}
     </Card>
   );

@@ -13,6 +13,7 @@ export type FighterRecord = {
 };
 
 export interface Fighter {
+  _id: string;
   name: string;
   fighterRusName: string;
   fighterImage: string;
