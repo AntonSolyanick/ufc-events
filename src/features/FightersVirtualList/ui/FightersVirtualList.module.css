@@ -1,0 +1,6 @@
+.infiniteScrollTarget {
+  height: 40px;
+  position: relative;
+  bottom: 540;
+  visibility: hidden;
+}

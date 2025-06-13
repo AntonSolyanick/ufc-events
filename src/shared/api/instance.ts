@@ -8,6 +8,9 @@ export const api = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
   },
+  paramsSerializer: {
+    indexes: null, // Важно для правильной сериализации параметров
+  },
 });
 
 api.interceptors.request.use((config) => {

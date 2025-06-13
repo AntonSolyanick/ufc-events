@@ -11,7 +11,6 @@ import { HStack } from "@/shared/ui/Stack/HStack/HStack";
 
 interface AuthFormProps extends HTMLDivElement {
   onCloseModal: () => void;
-  // className?: string;
 }
 
 export const AuthForm = (props: AuthFormProps) => {

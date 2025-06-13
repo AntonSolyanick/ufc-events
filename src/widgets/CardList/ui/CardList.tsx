@@ -14,11 +14,11 @@ export const CardList = <T,>(props: CardListProps<T>) => {
   const { items, renderCard, bigCards, ...otherProps } = props;
 
   return (
-    <section
+    <div
       className={classNames(cls.CardList, { [cls.bigCards]: bigCards })}
       {...otherProps}
     >
       {items.map((card) => renderCard(card))}
-    </section>
+    </div>
   );
 };
