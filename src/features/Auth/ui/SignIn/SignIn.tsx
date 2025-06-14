@@ -1,4 +1,4 @@
-import { Button } from "@/shared/ui/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 import { useForm } from "react-hook-form";
 import { BaseAuthFormData } from "../../model/types";
@@ -42,6 +42,7 @@ export const SignIn = (props: { onCloseModal: () => void }) => {
         className={cls.submitButton}
         type="submit"
         disabled={isPending}
+        theme={ButtonTheme.SOLID}
         fullWidth
       >
         Войти

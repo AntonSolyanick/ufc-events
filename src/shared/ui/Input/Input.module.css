@@ -7,11 +7,13 @@
 }
 
 .input {
-  background: transparent;
+  background: var(--secondary-bg-color-selected);
   border: none;
-  border-bottom: solid 1px;
+  border-radius: 3px;
+  box-shadow: var(--box-shadow);
   outline: none;
   width: 100%;
+  padding-left: 8px;
 }
 
 .readonly {

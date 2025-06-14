@@ -8,13 +8,16 @@ interface AuthModalProps {
   onClose: () => void;
 }
 
-export const AuthModal = ({ className, isOpen, onClose }: AuthModalProps) => (
-  <Modal
-    className={classNames("", {}, [className])}
-    isOpen={isOpen}
-    onClose={onClose}
-    lazy
-  >
-    <AuthForm onCloseModal={onClose} />
-  </Modal>
-);
+export const AuthModal = (props: AuthModalProps) => {
+  const { className, isOpen, onClose } = props;
+  return (
+    <Modal
+      className={classNames("", {}, [className])}
+      isOpen={isOpen}
+      onClose={onClose}
+      lazy
+    >
+      <AuthForm onCloseModal={onClose} />
+    </Modal>
+  );
+};

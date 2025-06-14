@@ -7,6 +7,7 @@ import { CardList } from "@/widgets/CardList/ui/CardList";
 import { useEffect, useState } from "react";
 import cls from "./FightersVirtualList.module.css";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { Input } from "@/shared/ui/Input";
 
 export const FightersVirtualList = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -33,7 +34,8 @@ export const FightersVirtualList = () => {
 
   return (
     <>
-      <input
+      <Input
+        className={cls.searchFighter}
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}

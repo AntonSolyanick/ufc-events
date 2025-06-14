@@ -1,4 +1,4 @@
-import { Button } from "@/shared/ui/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { useForm } from "react-hook-form";
 import { SignUpFormData } from "../../model/types";
 import { useSignUp } from "../../model/hooks/useAuth";
@@ -51,6 +51,7 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
         </div>
       )}
       <Button
+        theme={ButtonTheme.SOLID}
         className={cls.submitButton}
         type="submit"
         disabled={isPending}

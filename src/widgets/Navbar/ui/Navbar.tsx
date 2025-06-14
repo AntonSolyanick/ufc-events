@@ -1,16 +1,20 @@
 "use client";
 
+import { RiLoginBoxLine, RiLogoutBoxLine } from "react-icons/ri";
+import { useCallback, useState } from "react";
+
 import { AuthModal } from "@/features/Auth";
 import { useCheckAuth, useSignOut } from "@/features/Auth/model/hooks/useAuth";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { AppLink } from "@/shared/ui/AppLink";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { useCallback, useState } from "react";
+import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button";
+import { HStack } from "@/shared/ui/Stack/HStack/HStack";
+import cls from "./Navbar.module.css";
 
 export const Navbar = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { mutate: onLogout } = useSignOut();
-  const { data: user, isLoading } = useCheckAuth();
+  const { data: user } = useCheckAuth();
 
   const onShowModal = useCallback(() => {
     setIsAuthModalOpen(true);
@@ -20,42 +24,34 @@ export const Navbar = () => {
     setIsAuthModalOpen(false);
   }, []);
 
-  if (isLoading) {
-    return (
-      <header className="flex items-center justify-between p-4 shadow-md">
-        <nav className="flex gap-4">
+  return (
+    <header>
+      <nav>
+        <HStack className={cls.navBar} justify="around">
+          <ThemeSwitcher />
           <AppLink href="/favourite-fighters">Избранное</AppLink>
           <AppLink href="/">Все бойцы</AppLink>
-        </nav>
 
-        <div></div>
-      </header>
-    );
-  }
-
-  return (
-    <header className="flex items-center justify-between p-4 shadow-md">
-      <nav className="flex gap-4">
-        <AppLink href="/favourite-fighters">Избранное</AppLink>
-        <AppLink href="/">Все бойцы</AppLink>
+          {user ? (
+            <Button
+              onClick={() => onLogout()}
+              size={ButtonSize.XL}
+              theme={ButtonTheme.SOLID}
+            >
+              <RiLogoutBoxLine />
+            </Button>
+          ) : (
+            <Button
+              onClick={onShowModal}
+              size={ButtonSize.XL}
+              theme={ButtonTheme.SOLID}
+              aria-label="Открыть окно авторизации"
+            >
+              <RiLoginBoxLine />
+            </Button>
+          )}
+        </HStack>
       </nav>
-
-      <div>
-        <ThemeSwitcher />
-        {user ? (
-          <Button onClick={() => onLogout()} theme={ButtonTheme.CLEAR}>
-            Выйти
-          </Button>
-        ) : (
-          <Button
-            onClick={onShowModal}
-            theme={ButtonTheme.CLEAR}
-            aria-label="Открыть окно авторизации"
-          >
-            Войти
-          </Button>
-        )}
-      </div>
 
       <AuthModal isOpen={isAuthModalOpen} onClose={onCloseModal} />
     </header>

@@ -4,3 +4,10 @@
   bottom: 540;
   visibility: hidden;
 }
+
+.searchFighter {
+  margin-top: 20px;
+  width: 40%;
+  justify-self: center;
+  height: 35px;
+}

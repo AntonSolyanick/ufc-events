@@ -4,6 +4,7 @@
   flex-direction: column;
   width: 350px;
   height: 220px;
+  box-shadow: var(--box-shadow);
 }
 
 .authOptions {
@@ -11,6 +12,7 @@
 }
 
 .selected {
-  border-bottom: solid 1px;
-  border-radius: 0;
+  box-shadow: var(--box-shadow-selected);
+  background: var(--secondary-bg-color-selected);
+  z-index: -5;
 }

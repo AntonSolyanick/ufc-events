@@ -1,4 +1,5 @@
 "use client";
+
 import { MdLightMode } from "react-icons/md";
 
 import { useTheme } from "../lib/use-theme";
@@ -11,7 +12,7 @@ export const ThemeSwitcher = () => {
     <Button
       onClick={toggleTheme}
       size={ButtonSize.XL}
-      theme={ButtonTheme.CLEAR}
+      theme={ButtonTheme.SOLID}
     >
       <MdLightMode />
     </Button>
