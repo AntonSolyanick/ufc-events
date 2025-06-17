@@ -1,3 +1,7 @@
+.container {
+  margin-top: 80px;
+}
+
 .infiniteScrollTarget {
   height: 40px;
   position: relative;
@@ -6,8 +10,10 @@
 }
 
 .searchFighter {
-  margin-top: 20px;
+  position: relative;
+  font: var(--font-l);
+  text-align: center;
   width: 40%;
-  justify-self: center;
-  height: 35px;
+  inset-inline: 0;
+  margin-inline: auto;
 }

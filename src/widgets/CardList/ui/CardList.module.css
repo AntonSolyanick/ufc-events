@@ -1,10 +1,11 @@
 .CardList {
   padding: 30px;
+  padding-top: 15px;
 }
 
 .bigCards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
 }

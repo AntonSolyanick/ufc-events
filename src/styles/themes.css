@@ -13,9 +13,9 @@
     #e1e0e0 100%
   );
   --primary-color: rgb(25, 25, 25);
-  --secondary-color: rgb(210, 10, 10);
+  --secondary-color: rgb(53, 10, 210);
 
-  --card-bg: #d5d5d7;
+  --card-bg: linear-gradient(90deg, #8f8b8b 0%, #e0d4d4 60%, #8f8b8b 100%);
 
   --listbox-bg: #d5d5d7;
 

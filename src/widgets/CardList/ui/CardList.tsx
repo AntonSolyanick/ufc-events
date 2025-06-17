@@ -11,11 +11,13 @@ interface CardListProps<T> extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const CardList = <T,>(props: CardListProps<T>) => {
-  const { items, renderCard, bigCards, ...otherProps } = props;
+  const { items, renderCard, bigCards, className, ...otherProps } = props;
 
   return (
     <div
-      className={classNames(cls.CardList, { [cls.bigCards]: bigCards })}
+      className={classNames(cls.CardList, { [cls.bigCards]: bigCards }, [
+        className,
+      ])}
       {...otherProps}
     >
       {items.map((card) => renderCard(card))}

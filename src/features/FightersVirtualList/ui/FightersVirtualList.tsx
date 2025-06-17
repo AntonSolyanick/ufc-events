@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import cls from "./FightersVirtualList.module.css";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Input } from "@/shared/ui/Input";
+import { Loader } from "@/shared/ui/Loader";
 
 export const FightersVirtualList = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -33,13 +34,15 @@ export const FightersVirtualList = () => {
   });
 
   return (
-    <>
+    <section className={cls.container}>
       <Input
+        inputSize="large"
         className={cls.searchFighter}
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="введите имя бойца"
+        placeholderJustify="center"
       />
       <CardList
         bigCards
@@ -54,7 +57,7 @@ export const FightersVirtualList = () => {
       >
         infiniteScrollTarget
       </div>
-      <div>{isFetching && <div>Loading more...</div>}</div>
-    </>
+      <div>{isFetching && <Loader />}</div>
+    </section>
   );
 };

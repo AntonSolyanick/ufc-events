@@ -1,5 +1,4 @@
 .Text {
-  color: red;
   text-align: center;
 }
 
@@ -21,14 +20,17 @@
 
 .size_s .title {
   font: var(--font-m);
+  text-shadow: 1px 1px 1px;
 }
 
 .size_s .text {
   font: var(--font-s);
+  text-shadow: 1px 1px 1px;
 }
 
 .size_m .title {
   font: var(--font-l);
+  text-shadow: 1px 1px 1px;
 }
 
 .size_m .text {
@@ -37,8 +39,10 @@
 
 .size_l .title {
   font: var(--font-xl);
+  text-shadow: 1px 1px 1px;
 }
 
 .size_l .text {
   font: var(--font-l);
+  text-shadow: 1px 1px 1px;
 }

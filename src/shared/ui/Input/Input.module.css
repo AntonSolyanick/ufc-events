@@ -19,3 +19,28 @@
 .readonly {
   opacity: 0.7;
 }
+
+.small {
+  height: 20px;
+}
+
+.medium {
+  height: 30px;
+}
+
+.large {
+  height: 40px;
+}
+
+.start input {
+  text-align: left;
+}
+
+.center input {
+  text-align: center;
+  justify-content: center;
+}
+
+.end input {
+  text-align: right;
+}

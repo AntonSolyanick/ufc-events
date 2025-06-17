@@ -1,17 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { TbUserQuestion } from "react-icons/tb";
 
 import { Card } from "@/shared/ui/Card";
 import { Fighter } from "../../model/types/fighter";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text } from "@/shared/ui/Text";
 import cls from "./FighterCard.module.css";
-import { Button } from "@/shared/ui/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { FighterImageSize } from "../../model/сonstants";
 import { useUser } from "@/features/Auth/model/hooks/useAuth";
 
 import { useFavouriteFighters } from "@/features/FavouriteFightersList/model/hooks/useFavouriteFighter";
+import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 
 interface FighterCardProps {
   fighter: Fighter;
@@ -44,21 +46,21 @@ export const FighterCard = (props: FighterCardProps) => {
         height={FighterImageSize.FIGHTER_IMAGE_HEIGHT}
         priority
       ></Image>
-      <div className={cls.textContainer}>
+      <VStack className={cls.textContainer}>
         <Text title={fighter.fighterRusName} />
         <div className={cls.fighterInfo}>
           <Text
-            text={`Побед:${fighter?.fighterRecord?.wins || 0} Ничьих:${
+            text={`Побед:${fighter?.fighterRecord?.wins || 0}  Ничьих:${
               fighter?.fighterRecord?.draws || 0
-            } Поражений:${fighter?.fighterRecord?.loses || 0}`}
+            }  Поражений:${fighter?.fighterRecord?.loses || 0}`}
           />
-          <Text text={`Позиция в рейтинге: ${fighter.fighterRating}`} />
+          <Text text={`Позиция в рейтинге: ${fighter.fighterRating || "-"}`} />
           <Text text={fighter.fighterWeightCategory} />
         </div>
-      </div>
+      </VStack>
 
       {fighter.nextFightInfo ? (
-        <div className={cls.nextFightInfo}>
+        <VStack className={cls.nextFightInfo}>
           <Text text="Следующий бой" />
           <Text text={fighter.nextFightInfo.fightDate} />
           <Image
@@ -68,15 +70,17 @@ export const FighterCard = (props: FighterCardProps) => {
             height={FighterImageSize.PORTRAIT_FIGHTER_IMAGE_HEIGHT}
           ></Image>
           <Text text={fighter.nextFightInfo.firstFighterName} />
-        </div>
+        </VStack>
       ) : (
-        <div className={cls.nextFightInfo}>
-          <Text text="Следующий бой не назначен" />
-        </div>
+        <VStack className={cls.nextFightInfo}>
+          <Text text="Следующий бой" />
+          <TbUserQuestion className={cls.questionIcon} />
+        </VStack>
       )}
 
       {user && (
         <Button
+          theme={ButtonTheme.SOLID}
           className={cls.addButton}
           onClick={handleFavouriteClick}
           //  loading={addFavourite.isLoading || removeFavouriteFighter.isLoading}

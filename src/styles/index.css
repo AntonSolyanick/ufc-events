@@ -3,6 +3,6 @@
 @import "themes.css";
 
 body {
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   color: var(--foreground);
 }

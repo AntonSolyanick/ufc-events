@@ -24,10 +24,12 @@ export const SignIn = (props: { onCloseModal: () => void }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <VStack className={cls.inputContainer} align="center" gap="8">
         <Input
+          inputSize="medium"
           {...register("email", { required: "Email is required" })}
           placeholder="Email"
         />
         <Input
+          inputSize="medium"
           {...register("password", { required: "Password is required" })}
           placeholder="Пароль"
           type="password"
