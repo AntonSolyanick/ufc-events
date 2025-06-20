@@ -5,6 +5,8 @@ import { useSignUp } from "../../model/hooks/useAuth";
 import cls from "./SignUp.module.css";
 import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 import { Input } from "@/shared/ui/Input";
+import { Text } from "@/shared/ui/Text";
+import { TextSize } from "@/shared/ui/Text/Text";
 
 export const SignUp = (props: { onCloseModal: () => void }) => {
   const { mutate: signUp, error: signUpError, isPending } = useSignUp();
@@ -50,10 +52,13 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
         />
       </VStack>
       {signUpError && (
-        <div className={cls.error}>
-          {(signUpError as Error).message || "Login failed"}
-        </div>
+        <Text
+          className={cls.error}
+          size={TextSize.L}
+          error={(signUpError as Error).message}
+        />
       )}
+
       <Button
         theme={ButtonTheme.SOLID}
         className={cls.submitButton}

@@ -20,29 +20,47 @@
 
 .size_s .title {
   font: var(--font-m);
-  text-shadow: 1px 1px 1px;
+  text-shadow: 1px 1px 1px var(--primary-color);
 }
 
 .size_s .text {
   font: var(--font-s);
-  text-shadow: 1px 1px 1px;
+  text-shadow: 1px 1px 1px var(--primary-color);
+}
+
+.size_s .error {
+  font: var(--font-s);
+  text-shadow: 1px 1px 1px var(--primary-color);
+  color: red;
 }
 
 .size_m .title {
   font: var(--font-l);
-  text-shadow: 1px 1px 1px;
+  text-shadow: 1px 1px 1px var(--primary-color);
 }
 
 .size_m .text {
   font: var(--font-m);
 }
 
+.size_m .error {
+  font: var(--font-m);
+  text-shadow: 1px 1px 1px var(--primary-color);
+  color: red;
+}
+
 .size_l .title {
   font: var(--font-xl);
-  text-shadow: 1px 1px 1px;
+  text-shadow: 1px 1px 1px var(--primary-color);
 }
 
 .size_l .text {
   font: var(--font-l);
-  text-shadow: 1px 1px 1px;
+  text-shadow: 1px 1px 1px var(--primary-color);
+}
+
+.size_l .error {
+  font: var(--font-l);
+  text-shadow: 1px 1px 1px var(--primary-color);
+  color: red;
 }

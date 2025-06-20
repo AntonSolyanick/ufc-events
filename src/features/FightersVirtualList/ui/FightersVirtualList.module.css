@@ -17,3 +17,8 @@
   inset-inline: 0;
   margin-inline: auto;
 }
+
+.loader {
+  position: relative;
+  top: -60px;
+}

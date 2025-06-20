@@ -25,11 +25,19 @@ export const useSignUp = () => {
 
   return useMutation({
     mutationFn: async (payload: SignUpFormData) => {
-      const { data } = await api.post<{ jwt: string; user: User }>(
-        "/users/signup",
-        payload
-      );
-      return data;
+      try {
+        const { data } = await api.post<{ jwt: string; user: User }>(
+          "/users/signup",
+          payload
+        );
+        return data;
+      } catch (error) {
+        throw new Error(
+          axios.isAxiosError(error)
+            ? error.response?.data?.message || "Ошибка регистрации"
+            : "Ошибка сети"
+        );
+      }
     },
     onSuccess: (data) => {
       Cookies.set("jwt", data.jwt, { expires: 7 });
@@ -52,8 +60,8 @@ export const useSignIn = () => {
         console.error("Login error:", error);
         throw new Error(
           axios.isAxiosError(error)
-            ? error.response?.data?.message || "Login failed"
-            : "Network error"
+            ? error.response?.data?.message || "Ошибка авторизации"
+            : "Ошибка сети"
         );
       }
     },

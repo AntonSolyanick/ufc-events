@@ -6,9 +6,10 @@ import { useUser } from "@/features/Auth/model/hooks/useAuth";
 import cls from "./FavouriteFightersList.module.css";
 import { Loader } from "@/shared/ui/Loader";
 import { Text } from "@/shared/ui/Text";
+import { TextSize } from "@/shared/ui/Text/Text";
 
 export const FavouriteFightersList = () => {
-  const { data: user, isLoading } = useUser();
+  const { data: user, isLoading, error: fetchingError } = useUser();
   const favouriteFighters = user?.favouriteFighters || [];
 
   return (
@@ -21,12 +22,16 @@ export const FavouriteFightersList = () => {
           <FighterCard key={fighter.slug} fighter={fighter} />
         )}
       />
-      <div>{isLoading && <Loader />}</div>
-      <div>
-        {!user && !isLoading && (
-          <Text title="Авторизуйтесь для просмотра своего списка бойцов" />
-        )}
-      </div>
+
+      {isLoading && <Loader />}
+
+      {!user && !isLoading && (
+        <Text title="Авторизуйтесь для просмотра своего списка бойцов" />
+      )}
+
+      {fetchingError && (
+        <Text size={TextSize.L} error="При загрузке данных произошла ошибка!" />
+      )}
     </>
   );
 };

@@ -9,6 +9,8 @@ import cls from "./FightersVirtualList.module.css";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Input } from "@/shared/ui/Input";
 import { Loader } from "@/shared/ui/Loader";
+import { Text } from "@/shared/ui/Text";
+import { TextSize } from "@/shared/ui/Text/Text";
 
 export const FightersVirtualList = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,8 +24,13 @@ export const FightersVirtualList = () => {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  const { data, fetchNextPage, hasNextPage, isFetching } =
-    useFighters(debouncedSearchQuery);
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetching,
+    error: fetchingError,
+  } = useFighters(debouncedSearchQuery);
 
   const allFighters = data?.pages.flat() || [];
 
@@ -57,7 +64,18 @@ export const FightersVirtualList = () => {
       >
         infiniteScrollTarget
       </div>
-      <div>{isFetching && <Loader />}</div>
+      {isFetching && <Loader className={cls.loader} />}
+
+      {fetchingError && (
+        <Text size={TextSize.L} error="При загрузке данных произошла ошибка!" />
+      )}
+
+      {allFighters.length < 1 &&
+        searchQuery &&
+        !isFetching &&
+        !fetchingError && (
+          <Text size={TextSize.L} text="Такого бойца нет в базе" />
+        )}
     </section>
   );
 };

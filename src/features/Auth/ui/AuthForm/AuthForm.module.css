@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 260px;
+  width: 375px;
+  height: 295px;
   box-shadow: var(--box-shadow);
 }
 

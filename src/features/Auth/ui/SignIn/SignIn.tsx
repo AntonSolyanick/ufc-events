@@ -5,6 +5,8 @@ import { BaseAuthFormData } from "../../model/types";
 import { useSignIn } from "../../model/hooks/useAuth";
 import cls from "./SignIn.module.css";
 import { Input } from "@/shared/ui/Input";
+import { Text } from "@/shared/ui/Text";
+import { TextSize } from "@/shared/ui/Text/Text";
 
 export const SignIn = (props: { onCloseModal: () => void }) => {
   const { mutate: signIn, error: signInError, isPending } = useSignIn();
@@ -36,9 +38,11 @@ export const SignIn = (props: { onCloseModal: () => void }) => {
         />
       </VStack>
       {signInError && (
-        <div className={cls.error}>
-          {(signInError as Error).message || "signIn failed"}
-        </div>
+        <Text
+          className={cls.error}
+          size={TextSize.L}
+          error={(signInError as Error).message}
+        />
       )}
       <Button
         className={cls.submitButton}

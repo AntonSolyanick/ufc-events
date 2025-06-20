@@ -13,11 +13,8 @@
     #e1e0e0 100%
   );
   --primary-color: rgb(25, 25, 25);
-  --secondary-color: rgb(53, 10, 210);
 
   --card-bg: linear-gradient(90deg, #8f8b8b 0%, #e0d4d4 60%, #8f8b8b 100%);
-
-  --listbox-bg: #d5d5d7;
 
   --box-shadow: 5px 5px 10px #170c0c;
   --box-shadow--selected: 0 4px 15px rgba(0, 0, 0, 0.1),
@@ -26,7 +23,19 @@
 }
 
 .dark {
-  --bg-color: rgb(0, 0, 0);
-  --secondary-bg-color: rgb(47, 34, 34);
+  --bg-color: rgb(26, 26, 26);
+  --secondary-bg-color-selected: linear-gradient(
+    145deg,
+    #1a1919 0%,
+    #383333 50%,
+    #181717 100%
+  );
+  --secondary-bg-color: linear-gradient(
+    145deg,
+    #2a2828 0%,
+    #615959 50%,
+    #2e2b2b 100%
+  );
+  --card-bg: linear-gradient(90deg, #524848 0%, #342a2a 50%, #6f5e5e 100%);
   --primary-color: rgb(255, 255, 255);
 }

@@ -19,6 +19,7 @@ interface TextProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   title?: string;
   text?: string;
+  error?: string;
   align?: TextAlign;
   size?: TextSize;
 }
@@ -28,6 +29,7 @@ export const Text = (props: TextProps) => {
     className,
     text,
     title,
+    error,
     align = TextAlign.CENTER,
     size = TextSize.M,
     ...otherProps
@@ -41,6 +43,7 @@ export const Text = (props: TextProps) => {
     <div className={classNames(cls.Text, mods, [className])} {...otherProps}>
       {title && <h2 className={cls.title}>{title}</h2>}
       {text && <p className={cls.text}>{text}</p>}
+      {error && <p className={cls.error}>{error}</p>}
     </div>
   );
 };

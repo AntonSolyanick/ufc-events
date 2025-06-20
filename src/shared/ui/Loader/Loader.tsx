@@ -9,7 +9,7 @@ export enum LoaderSize {
 }
 
 interface LoaderProps {
-  className?: "string";
+  className?: string;
   size?: LoaderSize;
 }
 
