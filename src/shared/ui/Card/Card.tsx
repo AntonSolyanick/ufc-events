@@ -12,11 +12,11 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export const Card = (props: CardProps) => {
   const { children, className, max, ...otherProps } = props;
   return (
-    <article
+    <div
       className={classNames(cls.Card, { [cls.max]: max }, [className])}
       {...otherProps}
     >
       {children}
-    </article>
+    </div>
   );
 };

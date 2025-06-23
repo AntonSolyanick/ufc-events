@@ -24,7 +24,7 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <VStack className={cls.inputContainer} gap="8" align="center">
+      <VStack className={cls.inputContainer} gap="16" align="center">
         <Input
           inputSize="medium"
           {...register("name", { required: "Name is required" })}

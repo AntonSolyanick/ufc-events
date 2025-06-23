@@ -5,10 +5,22 @@
 
 .inputContainer {
   margin-top: 10px;
+  gap: 14;
 }
 
 .error {
   margin-top: 8px;
   text-align: center;
   color: var(--red-dark);
+}
+
+@media (min-width: 769px) {
+  .AuthForm {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    height: 295px;
+    box-shadow: var(--box-shadow);
+  }
 }

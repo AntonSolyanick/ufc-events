@@ -4,9 +4,15 @@
 }
 
 .inputContainer {
-  margin-top: 45px;
+  margin-top: 70px;
 }
 
 .error {
   margin-top: 15px;
+}
+
+@media (min-width: 769px) {
+  .inputContainer {
+    margin-top: 60px;
+  }
 }

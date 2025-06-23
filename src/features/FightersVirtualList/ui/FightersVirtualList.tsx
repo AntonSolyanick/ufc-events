@@ -41,16 +41,17 @@ export const FightersVirtualList = () => {
   });
 
   return (
-    <section className={cls.container}>
-      <Input
-        inputSize="large"
-        className={cls.searchFighter}
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="введите имя бойца"
-        placeholderJustify="center"
-      />
+    <section>
+      <div className={cls.searchFighter}>
+        <Input
+          inputSize="large"
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="введите имя бойца"
+          placeholderJustify="center"
+        />
+      </div>
       <CardList
         bigCards
         items={allFighters}

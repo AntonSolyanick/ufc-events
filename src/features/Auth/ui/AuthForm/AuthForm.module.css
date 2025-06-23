@@ -1,18 +1,27 @@
 .AuthForm {
   position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  width: 375px;
-  height: 295px;
+  width: 265px;
+  height: 320px;
+  background-color: inherit;
   box-shadow: var(--box-shadow);
 }
 
 .authOptions {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .selected {
   box-shadow: var(--box-shadow-selected);
   background: var(--secondary-bg-color-selected);
   z-index: -5;
+}
+
+@media (min-width: 769px) {
+  .AuthForm {
+    width: 375px;
+    height: 340px;
+  }
 }

@@ -29,7 +29,7 @@ export const Navbar = () => {
       <nav>
         <HStack className={cls.navBar} justify="around">
           <ThemeSwitcher />
-          <AppLink href="/favourite-fighters">Избранное</AppLink>
+          <AppLink href="/favourite-fighters">Мой список</AppLink>
           <AppLink href="/">Все бойцы</AppLink>
 
           {user ? (

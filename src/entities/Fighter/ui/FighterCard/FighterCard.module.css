@@ -1,7 +1,7 @@
 .FighterCard {
   display: flex;
   justify-content: space-around;
-  width: 700px;
+  width: 100%;
   position: relative;
   box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.3),
     inset -6px -6px 10px rgba(255, 255, 255, 0.4);
@@ -13,8 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-bottom: 60px;
-  padding-left: 20px;
+  padding-bottom: 40px;
 }
 
 .fighterInfo {
@@ -30,8 +29,8 @@
   justify-content: space-around;
   align-items: center;
   background: var(--secondary-bg-color);
-  height: 150px;
-  width: 128px;
+  height: 120px;
+  width: 95px;
   align-self: center;
   box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.3),
     inset -6px -6px 10px rgba(255, 255, 255, 0.4);
@@ -42,8 +41,10 @@
 
 .addButton {
   position: absolute;
-  bottom: 10;
-  right: 20;
+  bottom: 5;
+  scale: 0.8;
+  max-width: 200px;
+  margin-left: 15px;
 }
 
 .questionIcon {
@@ -51,4 +52,41 @@
   justify-self: center;
   width: 95px;
   height: auto;
+}
+
+.bigFighterImage {
+  width: var(--fighter-big-image-width);
+  height: var(--fighter-big-image-height);
+}
+
+.portraitFighterImage {
+  width: var(--fighter-portrait-image-width);
+  height: var(--fighter-portrait-image-height);
+}
+
+.removeCard {
+  transition: all 1s ease;
+  scale: 0.2;
+}
+
+@media (min-width: 769px) {
+  .FighterCard {
+    width: 700px;
+  }
+  .nextFightInfo {
+    height: 150px;
+    width: 128px;
+    margin-top: 45px;
+    align-self: normal;
+  }
+  .textContainer {
+    padding-bottom: 60px;
+    padding-left: 20px;
+  }
+  .addButton {
+    width: 100%;
+    bottom: 10;
+    right: 20;
+    scale: 1;
+  }
 }

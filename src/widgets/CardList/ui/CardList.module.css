@@ -1,5 +1,5 @@
 .CardList {
-  padding: 30px;
+  padding: 10px;
   padding-top: 15px;
 }
 
@@ -7,5 +7,16 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
+}
+
+@media (min-width: 769px) {
+  .CardList {
+    margin-top: 120px;
+    padding: 30px;
+    padding-top: 15px;
+  }
+  .bigCards {
+    gap: 30px;
+  }
 }

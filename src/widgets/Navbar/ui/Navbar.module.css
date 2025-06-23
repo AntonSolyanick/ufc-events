@@ -2,6 +2,16 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-  top: 0;
-  height: 57px;
+  bottom: 0;
+  height: var(--navbar-height);
+}
+
+.navBar * {
+  height: 100%;
+}
+
+@media (min-width: 769px) {
+  .navBar {
+    top: 0;
+  }
 }
