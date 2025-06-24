@@ -42,7 +42,7 @@ export const FighterCard = (props: FighterCardProps) => {
   };
 
   return (
-    <div ref={cardRef}>
+    <div ref={cardRef} className={isFavourite ? cls.favourite : ""}>
       <Card className={cls.FighterCard}>
         <Image
           className={cls.bigFighterImage}

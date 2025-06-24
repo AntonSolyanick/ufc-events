@@ -19,7 +19,6 @@
     var(--font-barlow-condensed);
 
   --navbar-height: 57px;
-  --sidebar-width-collapsed: 80px;
 
   --modal-z-index: 1000;
   --overlay-z-index: 100;
@@ -59,9 +58,7 @@
     --font-xl: var(--font-size-xl) / var(--font-line-xl)
       var(--font-barlow-condensed);
 
-    --navbar-height: 50px;
-    --sidebar-width: 300px;
-    --sidebar-width-collapsed: 80px;
+    --navbar-height: 57px;
 
     --modal-z-index: 1000;
     --overlay-z-index: 100;
