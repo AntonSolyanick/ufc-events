@@ -7,6 +7,8 @@ import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 import { Input } from "@/shared/ui/Input";
 import { Text } from "@/shared/ui/Text";
 import { TextSize } from "@/shared/ui/Text/Text";
+import { Loader } from "@/shared/ui/Loader";
+import { Overlay } from "@/shared/ui/Overlay";
 
 export const SignUp = (props: { onCloseModal: () => void }) => {
   const { mutate: signUp, error: signUpError, isPending } = useSignUp();
@@ -57,6 +59,12 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
           size={TextSize.L}
           error={(signUpError as Error).message}
         />
+      )}
+      {isPending && (
+        <>
+          <Overlay />
+          <Loader className={cls.loader} />
+        </>
       )}
 
       <Button

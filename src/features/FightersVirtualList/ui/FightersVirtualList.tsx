@@ -41,7 +41,7 @@ export const FightersVirtualList = () => {
   });
 
   return (
-    <section>
+    <section className={cls.container}>
       <div className={cls.searchFighter}>
         <Input
           inputSize="large"

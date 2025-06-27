@@ -40,7 +40,6 @@ export const useSignUp = () => {
       }
     },
     onSuccess: (data) => {
-      Cookies.set("jwt", data.jwt, { expires: 7 });
       queryClient.setQueryData(["user"], data.user);
       router.refresh();
     },

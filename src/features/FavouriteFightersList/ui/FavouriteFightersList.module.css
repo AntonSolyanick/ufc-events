@@ -1,1 +1,27 @@
+.position {
+  position: relative;
+  top: 150px;
+}
 
+.container {
+  margin-top: 50px;
+}
+
+.title {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+  height: 60px;
+  inset-inline: 0;
+  margin-inline: auto;
+  background-color: var(--bg-color);
+}
+
+@media (min-width: 769px) {
+  .position {
+    top: -50px;
+  }
+}

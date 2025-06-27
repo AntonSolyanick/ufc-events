@@ -1,24 +1,24 @@
 :root {
   --font-family-main: roboto, "Times New Roman", serif;
 
-  --font-size-s: 12px;
-  --font-line-s: 14px;
+  --font-size-s: 10px;
+  --font-line-s: 12px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-barlow-condensed);
 
-  --font-size-m: 14px;
-  --font-line-m: 16px;
+  --font-size-m: 12px;
+  --font-line-m: 14px;
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-barlow-condensed);
 
-  --font-size-l: 18px;
-  --font-line-l: 24px;
+  --font-size-l: 16px;
+  --font-line-l: 22px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-barlow-condensed);
 
-  --font-size-xl: 24px;
-  --font-line-xl: 28px;
+  --font-size-xl: 20px;
+  --font-line-xl: 24px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl)
     var(--font-barlow-condensed);
 
-  --navbar-height: 57px;
+  --navbar-height: 70px;
 
   --modal-z-index: 1000;
   --overlay-z-index: 100;
@@ -27,11 +27,11 @@
   --red-light: #f00;
   --red-dark: #ce0505;
 
-  --fighter-big-image-width: 116px;
-  --fighter-big-image-height: 177px;
+  --fighter-big-image-width: 93px;
+  --fighter-big-image-height: 142px;
 
-  --fighter-portrait-image-width: 103px;
-  --fighter-portrait-image-height: 64px;
+  --fighter-portrait-image-width: 83px;
+  --fighter-portrait-image-height: 52px;
 }
 
 @media (min-width: 769px) {

@@ -7,6 +7,8 @@ import cls from "./SignIn.module.css";
 import { Input } from "@/shared/ui/Input";
 import { Text } from "@/shared/ui/Text";
 import { TextSize } from "@/shared/ui/Text/Text";
+import { Loader } from "@/shared/ui/Loader";
+import { Overlay } from "@/shared/ui/Overlay";
 
 export const SignIn = (props: { onCloseModal: () => void }) => {
   const { mutate: signIn, error: signInError, isPending } = useSignIn();
@@ -43,6 +45,12 @@ export const SignIn = (props: { onCloseModal: () => void }) => {
           size={TextSize.L}
           error={(signInError as Error).message}
         />
+      )}
+      {isPending && (
+        <>
+          <Overlay />
+          <Loader className={cls.loader} />
+        </>
       )}
       <Button
         className={cls.submitButton}

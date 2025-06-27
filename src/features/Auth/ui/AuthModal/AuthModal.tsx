@@ -1,5 +1,4 @@
 import { Modal } from "@/shared/ui/Modal/Modal";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { AuthForm } from "../AuthForm/AuthForm";
 
 interface AuthModalProps {
@@ -9,14 +8,9 @@ interface AuthModalProps {
 }
 
 export const AuthModal = (props: AuthModalProps) => {
-  const { className, isOpen, onClose } = props;
+  const { isOpen, onClose } = props;
   return (
-    <Modal
-      className={classNames("", {}, [className])}
-      isOpen={isOpen}
-      onClose={onClose}
-      lazy
-    >
+    <Modal isOpen={isOpen} onClose={onClose} lazy>
       <AuthForm onCloseModal={onClose} />
     </Modal>
   );

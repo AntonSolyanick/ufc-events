@@ -9,12 +9,14 @@ import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button";
 import { HStack } from "@/shared/ui/Stack/HStack/HStack";
+import { Text } from "@/shared/ui/Text";
 import cls from "./Navbar.module.css";
+import { TextSize } from "@/shared/ui/Text/Text";
 
 export const Navbar = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { mutate: onLogout } = useSignOut();
-  const { data: user } = useCheckAuth();
+  const { data: user, isPending: isPendingAuth } = useCheckAuth();
 
   const onShowModal = useCallback(() => {
     setIsAuthModalOpen(true);
@@ -34,16 +36,19 @@ export const Navbar = () => {
 
           {user ? (
             <Button
+              disabled={isPendingAuth}
               onClick={() => onLogout()}
-              size={ButtonSize.XL}
+              size={ButtonSize.L}
               theme={ButtonTheme.SOLID}
             >
               <RiLogoutBoxLine />
+              <Text size={TextSize.S} text={user.name} />
             </Button>
           ) : (
             <Button
+              disabled={isPendingAuth}
               onClick={onShowModal}
-              size={ButtonSize.XL}
+              size={ButtonSize.L}
               theme={ButtonTheme.SOLID}
               aria-label="Открыть окно авторизации"
             >

@@ -4,10 +4,14 @@
   width: 100%;
   bottom: 0;
   height: var(--navbar-height);
+  align-items: center;
+  text-align: center;
 }
 
 .navBar * {
   height: 100%;
+  align-items: center;
+  text-align: center;
 }
 
 @media (min-width: 769px) {
