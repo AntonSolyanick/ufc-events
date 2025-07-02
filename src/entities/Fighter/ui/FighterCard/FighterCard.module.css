@@ -3,7 +3,6 @@
   justify-content: space-around;
   width: 95vw;
   position: relative;
-
   left: 0;
   flex-grow: 1;
   box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.3),
@@ -12,21 +11,28 @@
   border-color: #909090 #b0b0b0 #b0b0b0 #909090;
 }
 .favourite {
-  box-shadow: 6px 6px 10px red;
+  box-shadow: 3px 3px 5px red;
 }
 
 .textContainer {
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding-bottom: 40px;
+  align-items: center;
+}
+
+.wrapText {
+  white-space: nowrap;
 }
 
 .fighterInfo {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 10px;
+  gap: 7px;
+  scale: 0.8;
 }
 
 .nextFightInfo {
@@ -36,27 +42,29 @@
   align-items: center;
   background: var(--secondary-bg-color);
   height: 125px;
-  width: 100px;
+  width: 115px;
   align-self: center;
   box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.3),
     inset -6px -6px 10px rgba(255, 255, 255, 0.4);
   border: 1px solid;
   border-radius: 4px;
   border-color: #909090 #b0b0b0 #b0b0b0 #909090;
+  scale: 0.85;
 }
 
 .addButton {
   position: absolute;
-  bottom: 5px;
-  scale: 0.8;
-  width: 170px;
+  bottom: 2px;
+  margin-right: 10px;
+  scale: 0.65;
+  width: 190px;
 }
 
 .questionIcon {
   justify-content: center;
   justify-self: center;
-  width: 95px;
-  height: auto;
+  width: var(--fighter-portrait-image-width);
+  height: var(--fighter-portrait-image-height);
 }
 
 .bigFighterImage {
@@ -74,17 +82,28 @@
   scale: 0.2;
 }
 
+.highlightText {
+  color: red;
+  text-shadow: 1px 1px 1px red;
+}
+
 @media (min-width: 769px) {
   .FighterCard {
     width: 700px;
+  }
+  .favourite {
+    box-shadow: 6px 6px 10px red;
   }
   .nextFightInfo {
     height: 150px;
     width: 128px;
     margin-top: 45px;
     align-self: normal;
+    scale: 1;
   }
   .textContainer {
+    align-items: center;
+    width: 40%;
     padding-bottom: 60px;
     padding-left: 20px;
   }
@@ -92,6 +111,10 @@
     width: 220px;
     bottom: 10px;
     right: 20px;
+    scale: 1;
+  }
+
+  .fighterInfo {
     scale: 1;
   }
 }

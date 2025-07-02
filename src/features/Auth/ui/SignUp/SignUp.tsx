@@ -34,9 +34,9 @@ export const SignUp = (props: { onCloseModal: () => void }) => {
         />
         <Input
           inputSize="medium"
-          {...register("email", { required: "Email is required" })}
-          placeholder="Email"
-          type="email"
+          {...register("login", { required: "Login is required" })}
+          placeholder="Логин"
+          type="text"
         />
         <Input
           inputSize="medium"

@@ -53,16 +53,25 @@ export const FighterCard = (props: FighterCardProps) => {
           priority
         ></Image>
         <VStack className={cls.textContainer}>
-          <Text title={fighter.fighterRusName} />
+          <Text title={fighter.fighterRusName} className={cls.wrapText} />
           <div className={cls.fighterInfo}>
             <Text
+              className={cls.wrapText}
               text={`Побед:${fighter?.fighterRecord?.wins || 0}  Ничьих:${
                 fighter?.fighterRecord?.draws || 0
               }  Поражений:${fighter?.fighterRecord?.loses || 0}`}
             />
-            <Text
-              text={`Позиция в рейтинге: ${fighter.fighterRating || "-"}`}
-            />
+
+            {fighter.fighterRating == 0 ? (
+              <Text
+                text={`Позиция в рейтинге: чемпион`}
+                className={cls.highlightText}
+              />
+            ) : (
+              <Text
+                text={`Позиция в рейтинге: ${fighter.fighterRating || "-"}`}
+              />
+            )}
             <Text text={fighter.fighterWeightCategory} />
           </div>
         </VStack>
@@ -73,12 +82,12 @@ export const FighterCard = (props: FighterCardProps) => {
             <Text text={fighter.nextFightInfo.fightDate} />
             <Image
               className={cls.portraitFighterImage}
-              src={fighter.nextFightInfo.firstFighterSmallImg}
+              src={fighter.nextFightInfo.secondFighterSmallImg}
               alt="fighter image"
               width={FighterImageSize.PORTRAIT_FIGHTER_IMAGE_WIDTH}
               height={FighterImageSize.PORTRAIT_FIGHTER_IMAGE_HEIGHT}
             ></Image>
-            <Text text={fighter.nextFightInfo.firstFighterName} />
+            <Text text={fighter.nextFightInfo.secondFighterName} />
           </VStack>
         ) : (
           <VStack className={cls.nextFightInfo}>
@@ -102,7 +111,7 @@ export const FighterCard = (props: FighterCardProps) => {
         {!user && (
           <Text
             className={cls.addButton}
-            error="Авторизуйтесь для добавления бойцов в мой список"
+            error="Авторизуйтесь для добавления бойца в мой список"
           />
         )}
       </Card>

@@ -56,7 +56,7 @@ export const useSignIn = () => {
         const { data } = await api.post("/users/signin", credentials);
         return data;
       } catch (error) {
-        console.error("Login error:", error);
+        //console.error("Login error:", error.response.data);
         throw new Error(
           axios.isAxiosError(error)
             ? error.response?.data?.message || "Ошибка авторизации"

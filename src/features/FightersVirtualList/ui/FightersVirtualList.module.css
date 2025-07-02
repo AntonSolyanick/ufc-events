@@ -25,9 +25,13 @@
   margin-top: 50px;
 }
 
-.loader {
+.position {
   position: relative;
-  top: 150px;
+  top: 120px;
+}
+.isFetchingLoader {
+  position: relative;
+  top: -130;
 }
 
 @media (min-width: 769px) {
@@ -36,7 +40,7 @@
     top: var(--navbar-height);
   }
 
-  .loader {
+  .position {
     top: -50px;
   }
 }

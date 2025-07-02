@@ -27,11 +27,11 @@
   --red-light: #f00;
   --red-dark: #ce0505;
 
-  --fighter-big-image-width: 93px;
-  --fighter-big-image-height: 142px;
+  --fighter-big-image-width: 84px;
+  --fighter-big-image-height: 128px;
 
-  --fighter-portrait-image-width: 83px;
-  --fighter-portrait-image-height: 52px;
+  --fighter-portrait-image-width: 92px;
+  --fighter-portrait-image-height: 58px;
 }
 
 @media (min-width: 769px) {

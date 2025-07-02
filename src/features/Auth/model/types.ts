@@ -1,5 +1,5 @@
 export interface BaseAuthFormData {
-  email: string;
+  login: string;
   password: string;
 }
 

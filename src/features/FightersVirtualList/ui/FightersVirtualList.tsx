@@ -65,17 +65,31 @@ export const FightersVirtualList = () => {
       >
         infiniteScrollTarget
       </div>
-      {isFetching && <Loader className={cls.loader} />}
+      {isFetching && (
+        <Loader
+          className={`${
+            allFighters.length > 0 ? cls.isFetchingLoader : cls.position
+          }`}
+        />
+      )}
 
       {fetchingError && (
-        <Text size={TextSize.L} error="При загрузке данных произошла ошибка!" />
+        <Text
+          className={cls.position}
+          size={TextSize.L}
+          error="При загрузке данных произошла ошибка!"
+        />
       )}
 
       {allFighters.length < 1 &&
         searchQuery &&
         !isFetching &&
         !fetchingError && (
-          <Text size={TextSize.L} text="Такого бойца нет в базе" />
+          <Text
+            className={cls.position}
+            size={TextSize.L}
+            text="Такого бойца нет в базе"
+          />
         )}
     </section>
   );
