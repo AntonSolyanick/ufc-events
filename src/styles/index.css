@@ -5,6 +5,8 @@
 body {
   background: var(--bg-color);
   color: var(--foreground);
-
   -webkit-tap-highlight-color: transparent;
+}
+* {
+  font-family: var(--font-family-main);
 }

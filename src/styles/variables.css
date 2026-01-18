@@ -1,5 +1,5 @@
 :root {
-  --font-family-main: roboto, "Times New Roman", serif;
+  --font-family-main: sans-serif;
 
   --font-size-s: 10px;
   --font-line-s: 12px;
@@ -36,7 +36,7 @@
 
 @media (min-width: 769px) {
   :root {
-    --font-family-main: roboto, "Times New Roman", serif;
+    /* --font-family-main: roboto, "Times New Roman", serif; */
 
     --font-size-s: 14px;
     --font-line-s: 16px;
