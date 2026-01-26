@@ -28,7 +28,7 @@ export const FighterCard = (props: FighterCardProps) => {
     useFavouriteFighters();
 
   const isFavourite = user?.favouriteFighters?.some(
-    (favouriteFighter) => favouriteFighter._id === fighter._id
+    (favouriteFighter) => favouriteFighter._id === fighter._id,
   );
 
   const handleFavouriteClick = () => {
@@ -52,7 +52,7 @@ export const FighterCard = (props: FighterCardProps) => {
           height={FighterImageSize.FIGHTER_IMAGE_HEIGHT}
           priority
         ></Image>
-        <VStack className={cls.textContainer}>
+        <VStack className={cls.textContainer} align="center" justify="around">
           <Text title={fighter.fighterRusName} className={cls.wrapText} />
           <div className={cls.fighterInfo}>
             <Text
