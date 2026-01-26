@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
 
+import cls from "./AuthForm.module.css";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { SignUp } from "../SignUp/SignUp";
 import { SignIn } from "../SignIn/SignIn";
-
-import cls from "./AuthForm.module.css";
 import { HStack } from "@/shared/ui/Stack/HStack/HStack";
 
 interface AuthFormProps {
