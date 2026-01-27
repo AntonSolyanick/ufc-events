@@ -14,7 +14,7 @@
   margin-bottom: 15px;
 }
 
-.selected {
+button.selected {
   box-shadow: var(--box-shadow-selected);
   background: var(--secondary-bg-color-selected);
   z-index: -5;

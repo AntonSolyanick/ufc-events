@@ -14,23 +14,24 @@ interface AuthFormProps {
 export const AuthForm = (props: AuthFormProps) => {
   const [isRegistration, setIsRegistration] = useState(false);
   const { onCloseModal } = props;
+  console.log(isRegistration, cls.selected);
 
   return (
     <div className={cls.AuthForm}>
       <HStack className={cls.authOptions} justify="around">
         <Button
           fullWidth
+          theme={ButtonTheme.SOLID}
           className={isRegistration ? "" : cls.selected}
           onClick={() => setIsRegistration(false)}
-          theme={ButtonTheme.SOLID}
         >
           Вход
         </Button>
         <Button
+          theme={ButtonTheme.SOLID}
           fullWidth
           className={isRegistration ? cls.selected : ""}
           onClick={() => setIsRegistration(true)}
-          theme={ButtonTheme.SOLID}
         >
           Регистрация
         </Button>
